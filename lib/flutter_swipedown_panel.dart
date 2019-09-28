@@ -7,11 +7,15 @@ class SwipeDownPanel extends StatefulWidget {
   final Widget body;
   final Widget backdrop;
   final Duration duration;
+  final Color color;
+  final Color backdropColor;
 
   SwipeDownPanel({
     Key key,
     this.body,
+    this.color,
     this.backdrop,
+    this.backdropColor,
     this.upperBound,
     this.lowerBound,
     this.isOpen = false,
@@ -26,7 +30,6 @@ class _SwipeDownPanelState extends State<SwipeDownPanel>
     with TickerProviderStateMixin {
   AnimationController _ac;
   Animation<double> _an;
-  Animation<RelativeRect> _ap;
   Animation<RelativeRect> rectAnimation;
 
   @override
@@ -79,6 +82,7 @@ class _SwipeDownPanelState extends State<SwipeDownPanel>
                         height: sizeHeight,
                         width: sizeWidth,
                         child: widget.backdrop,
+                        color: widget.backdropColor??Theme.of(context).scaffoldBackgroundColor,
                       ),
                     ),
                     opacity: _ac.value,
@@ -120,6 +124,7 @@ class _SwipeDownPanelState extends State<SwipeDownPanel>
                   child: Material(
                     elevation: 16,
                     child: widget.body,
+                    color: widget.color??Theme.of(context).scaffoldBackgroundColor,
                   ),
                 ),
               )
