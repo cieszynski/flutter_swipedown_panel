@@ -119,7 +119,7 @@ class _SwipeDownPanelState extends State<SwipeDownPanel>
                   },
                   child: Material(
                     elevation: 16,
-                    child: InkWell(child: widget.body),
+                    child: widget.body,
                   ),
                 ),
               )
