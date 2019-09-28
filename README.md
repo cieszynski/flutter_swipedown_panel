@@ -1,4 +1,4 @@
-# flutter_slidedown_widget
+# flutter_swipedown_widget
 
 A new Flutter project.
 
